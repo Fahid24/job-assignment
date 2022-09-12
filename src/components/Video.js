@@ -3,13 +3,13 @@ import ReactPlayer from 'react-player';
 import { Link } from 'react-router-dom';
 const Video = () => {
     return (
-        <div className='bg-base-200'>
+        <div className='bg-base-200 p-5'>
             <div className=' flex justify-center '>
                 <ReactPlayer
                     playing={true}
                     controls={true}
-                    width="100%"
-                    url='https://youtu.be/w6I2wNVEb34'
+                    width="90%"
+                    url='https://youtu.be/w6I2wNVEb34?t=54'
                 />
             </div>
             <div className='px-12 py-5'>
