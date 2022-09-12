@@ -39,7 +39,7 @@ const BodyPart = ({ setText }) => {
                 >
 
                     <input onChange={handleText} className="col-span-8 w-full h-20 mt-3 textarea-primary border border-gray-400 rounded-md" placeholder="" name='text'></input>
-                    <MdDelete onClick={() => handleCloseCaptionInput()} className='text-3xl col-span-1 mx-auto lg:my-auto' />
+                    <MdDelete onClick={() => handleCloseCaptionInput()} className='cursor-pointer text-3xl col-span-1 mx-auto lg:my-auto' />
                     <div className='flex flex-col col-span-3 mt-3'>
                         <input value={'00:00:00'} className='border input-sm   border-gray-400 rounded-md input-primary' type="text" /><br />
                         <input value={'00:50:06'} className='border input-sm  border-gray-400 rounded-md input-primary' type="text" />

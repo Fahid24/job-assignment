@@ -9,13 +9,25 @@ import audio from "../Audio/viseo task.m4a"
 
 
 const FooterPart = ({ text }) => {
-    const [Zoom, setZoom] = useState(0)
+    const [Zoom, setZoom] = useState(0);
+    const [redoUndo, setRedoUndo] = useState(true);
+
 
     const handleZoomIn = () => {
         setZoom(Zoom + 10);
     }
+
     const handleZoomOut = () => {
         setZoom(Zoom - 10);
+    }
+
+    const handleUndo = () => {
+
+        setRedoUndo(false)
+    }
+    const handleRedo = () => {
+
+        setRedoUndo(true)
     }
 
     return (
@@ -23,9 +35,9 @@ const FooterPart = ({ text }) => {
             <div className='lg:flex justify-between font-semibold p-5'>
                 <div className='flex  gap-5'>
                     <input className='border input-sm w-20  border-gray-400 rounded-md input-primary' value={'00:00:00'} type="text" /><br />
-                    <IoMdUndo className='text-2xl cursor-pointer' />
+                    <IoMdUndo onClick={handleUndo} className='text-2xl cursor-pointer' />
                     <p>UNDO</p>
-                    <IoMdRedo className='text-2xl cursor-pointer' />
+                    <IoMdRedo onClick={handleRedo} className='text-2xl cursor-pointer' />
                     <p>REDO</p>
                 </div>
                 <div className='flex gap-4 mt-3 lg:mt-0 '>
@@ -55,7 +67,13 @@ const FooterPart = ({ text }) => {
                             <FaNewspaper className=' text-2xl  text-blue-700 ' />
                         </td>
                         <td className='col-span-10'>
-                            <p className=' text-white m-3 bg-blue-700'>{text}</p>
+                            <p className={` 
+                            
+
+                            ${redoUndo
+                                    ? "text-white m-3 bg-blue-700 transition-left duration-500 "
+                                    : " hidden"}`}
+                            >{text}</p>
                         </td>
                     </tr>
                     <hr className='text-xl p-0' />
